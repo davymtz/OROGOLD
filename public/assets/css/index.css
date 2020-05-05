@@ -54,3 +54,28 @@
     border: 1px solid #a4842c;
     color: #a4842c;
 }
+.second_section .title{
+    color: #a4842c;
+}
+.second_section .subtitle{
+    padding: 0 5em;
+}
+.second_section .col-md-4{
+    padding: 2.5em;
+}
+.second_section .col-md-4 .card-title{
+    color: #a4842c;
+}
+.second_section .col-md-4 .container-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+}
+.second_section .col-md-4 .container-img img{
+    width: 100%;
+    height: auto;
+}
