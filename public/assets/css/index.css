@@ -1,0 +1,56 @@
+.orogold-text {
+    font-weight: bold;
+    color: #a4842c !important;
+}
+.btn-outline-orogold {
+    color: #a4842c;
+    background-color: transparent;
+    background-image: none;
+    border-color: #a4842c;
+    border: 2px solid #a4842c;
+}
+.btn-outline-orogold:hover {
+    color: #fff;
+    background-color: #a4842c;
+    border-color: #a4842c;
+}
+.btn-outline-orogold.focus,
+.btn-outline-orogold:focus {
+    box-shadow: 0 0 0 .2rem rgba(164, 132, 44, .5)
+}
+/* Section */
+.section {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: auto;
+    height: 34em;
+}
+/* First Section */
+.first_section .row {
+    padding: 10% 0;
+}
+.first_section .title_section{
+    font-size: 5em;
+    color: #a4842c;
+}
+.first_section .slogan_title{
+    font-size: 1.5em;
+    color: white;
+}
+.card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.col-md-6[data-column="second"] input.form-control{
+    margin: 1em 0;
+}
+.btn-reservar {
+    color: white;
+    background: #a4842c;
+}
+.btn-reservar:hover {
+    background: white;
+    border: 1px solid #a4842c;
+    color: #a4842c;
+}
