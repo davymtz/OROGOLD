@@ -147,7 +147,7 @@
                     de dolor en el cerebro. El estímulo de los mecanos receptores mediante el masaje se ha demostrado
                     que alivia el dolor y la tensión muscular.
                 </p>
-                <button class="btn btn-reservar">Reserva ahora</button>
+                <button class="btn btn-reservar btn_return_scroll">Reserva ahora</button>
             </div>
         </div>
     </section>
@@ -157,6 +157,12 @@
     <script>
         $(".alert").alert('close');
         $(".btn-reservar").on("click", processReservar);
+        $(".btn_return_scroll").on("click", function (event){
+            event.preventDefault();
+            $('html, body').animate({
+                scrollTop: 0
+            }, 2000);
+        });
 
         function processReservar(event) {
             event.preventDefault();

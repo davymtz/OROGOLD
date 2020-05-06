@@ -90,10 +90,22 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    border: 1px solid black;
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    transition: transform 1s;
+}
+.second_section .col-md-4[data-column="first"] .container-img:hover{
+    transform: rotate(360deg);
+    box-shadow: 0 0 10px  #a4842c;
+}
+.second_section .col-md-4[data-column="second"] .container-img:hover{
+    transform: scale(1.5);
+    box-shadow: 0 0 10px  #a4842c;
+}
+.second_section .col-md-4[data-column="third"] .container-img:hover{
+    transform: rotateY(180deg);
+    box-shadow: 0 0 10px  #a4842c;
 }
 .second_section .col-md-4 .container-img img{
     width: 100%;
