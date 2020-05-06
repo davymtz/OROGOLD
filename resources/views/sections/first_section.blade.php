@@ -3,6 +3,7 @@
 @section('content')
     <section class="section first_section" style="background-image: url('{{asset('assets/images/bg-principal.jpg')}}');">
         <div class="container-fluid">
+            <div class="alerta" style="padding: 1em 0;"></div>
             <div class="row">
                 <div class="col-md-6 d-flex justify-content-center" data-column="first">
                     <div class="container_text">
@@ -15,9 +16,9 @@
                         <div class="card-body justify-content-center">
                             <h5 class="card-title">Reserva ahora tu cita</h5>
                             <form action="">
-                                <input type="text" class="form-control" placeholder="nombre" />
-                                <input type="email" class="form-control" placeholder="email" />
-                                <input type="tel" class="form-control" placeholder="telefono" />
+                                <input type="text" id="name_input" class="form-control" placeholder="Nombre" />
+                                <input type="email" id="email_input" class="form-control" placeholder="Email" />
+                                <input type="tel" id="phone_input" class="form-control" placeholder="Telefono" />
                                 <div style="display: flex; justify-content: center;">
                                     <input type="button" class="btn btn-reservar" value="Reserva ahora">
                                 </div>
@@ -150,4 +151,46 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('javascrip_file')
+    <script>
+        $(".alert").alert('close');
+        $(".btn-reservar").on("click", processReservar);
+
+        function processReservar(event) {
+            event.preventDefault();
+            name = $("#name_input").val();
+            email = $("#email_input").val();
+            phone = $("#phone_input").val();
+
+            $.ajax({
+                method: "GET",
+                url: "/evento_reservar/"+name+"/"+email+"/"+phone,
+                dataType: "json"
+            }).done(function (data){
+                if(data.status==200){
+                    $(".alerta").append(
+                    '<div class="alert alert-success alert-dismissible fade show" role="alert">'+
+                        data.message+
+                      '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+
+                        '<span aria-hidden="true">&times;</span>'+
+                      '</button></div>').alert('show');
+                } else {
+                    console.log(data);
+                    $(".alerta").append(
+                        '<div class="alert alert-danger alert-dismissible fade show" role="alert">'+
+                        data.message+
+                        '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+
+                            '<span aria-hidden="true">&times;</span>'+
+                        '</button>').alert('show');
+                }
+                setTimeout(function (){
+                    $(".alert").alert("close");
+                }, "3000");
+            }).fail(function (fail){
+                console.log(fail);
+            });
+        }
+    </script>
 @endsection

@@ -92,4 +92,5 @@
         });
     }
 </script>
+@yield('javascrip_file')
 </html>

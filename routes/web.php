@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('sections.first_section');
 });
+
+Route::get("/evento_reservar/{name}/{email}/{phone}", "ReservaController@reservar");
